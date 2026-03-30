@@ -1,4 +1,27 @@
-記念日)", type="password")
+import streamlit as st
+import requests
+from bs4 import BeautifulSoup
+import concurrent.futures
+
+# アプリの基本設定
+st.set_page_config(page_title="福岡 晴天率シミュレーター", page_icon="💍")
+
+# ==========================================
+# 🔒 セキュリティ機能：合言葉（パスワード）設定
+# ==========================================
+# ⬇️ ここにおふたりだけの好きな合言葉（パスワード）を設定してください！
+SECRET_PASSWORD = "1104" 
+
+# ログイン状態の管理
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+# ログイン画面
+if not st.session_state.authenticated:
+    st.title("🔒 秘密のシミュレーター")
+    st.write("このページはおふたり専用です。")
+    
+    password_input = st.text_input("合言葉を入力してください", type="password")
     
     if st.button("ロックを解除する"):
         if password_input == SECRET_PASSWORD:
