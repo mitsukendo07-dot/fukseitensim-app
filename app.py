@@ -10,7 +10,7 @@ st.set_page_config(page_title="福岡 晴天率シミュレーター", page_icon
 # 🔒 セキュリティ機能：合言葉（パスワード）設定
 # ==========================================
 # ⬇️ ここにおふたりだけの好きな合言葉（パスワード）を設定してください！
-SECRET_PASSWORD = "1104" 
+SECRET_PASSWORD = "20241104" 
 
 # ログイン状態の管理
 if "authenticated" not in st.session_state:
